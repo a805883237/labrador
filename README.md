@@ -891,7 +891,7 @@ package依赖：
 ```
 
 #### 运行：
-因为我们在使用这个框架式， labrador build 命令一直就无法启动，npm报错， 所以一直用的labrador watch 启动项目
+因为我们在使用这个框架时， labrador build 命令一直就无法启动，npm报错， 所以一直用的labrador watch 启动项目
 ```
 Error: ENOENT: no such file or directory, open '/Users/***********/node_modules/util'
     at Object.fs.openSync (fs.js:584:18)
