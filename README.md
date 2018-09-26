@@ -853,3 +853,11 @@ import wx, { Component } from 'labrador-immutable';
 ## 开源协议
 
 本项目依据MIT开源协议发布，允许任何组织和个人免费使用。
+
+
+
+## 由于该项目长时间没有人维护，已经无法支持微信新版api ，所以我们自行维护。
+修改内容如下：
+1. 当promise化出错时，由于报错信息缺失，我们增加了 log 输出 console.log("promise化 出错:",res)。
+2. 后续微信文档更新，新增组件周期 getUpdateManager (获取小程序更新信息) , 所以我们添加了这个入口。
+3. Page页面滚动事件(onPageScroll)没有生效，我们添加了这个功能。
