@@ -861,3 +861,52 @@ import wx, { Component } from 'labrador-immutable';
 1. 当promise化出错时，由于报错信息缺失，我们增加了 log 输出 console.log("promise化 出错:",res)。
 2. 后续微信文档更新，新增组件周期 getUpdateManager (获取小程序更新信息) , 所以我们添加了这个入口。
 3. Page页面滚动事件(onPageScroll)没有生效，我们添加了这个功能。
+
+
+## 使用 我们的框架：
+修改package.json 内容如下：
+最主要的是 
+```
+"labrador": "git+https://github.com/a805883237/labrador.git",
+```
+package依赖：
+```json
+{
+  "dependencies": {
+    "labrador": "git+https://github.com/a805883237/labrador.git", 
+    "labrador-cli": "^0.6.11",
+    "labrador-immutable": "^0.6.0",
+    "labrador-redux": "^0.1.1",
+    "labrador-storage": "^0.1.0",
+    "less": "^2.7.1",
+    "lodash": "^4.17.5",
+    "redux": "^3.6.0",
+    "redux-async-await": "^1.0.1",
+    "redux-create-reducer-curry": "^1.0.0",
+    "redux-logger": "^2.7.0",
+    "redux-promise": "^0.5.3",
+    "redux-thunk": "^2.1.0",
+  }
+}
+```
+
+#### 运行：
+因为我们在使用这个框架式， labrador build 命令一直就无法启动，npm报错， 所以一直用的labrador watch 启动项目
+```
+Error: ENOENT: no such file or directory, open '/Users/***********/node_modules/util'
+    at Object.fs.openSync (fs.js:584:18)
+    at Object.fs.readFileSync (fs.js:491:33)
+    at buildJS (/Users/rain/.nvm/versions/node/v7.10.0/lib/node_modules/labrador-cli/lib/build-js.js:69:17)
+    at buildJS.next (<anonymous>)
+    at buildJS (/Users/rain/.nvm/versions/node/v7.10.0/lib/node_modules/labrador-cli/lib/build-js.js:258:21)
+    at buildJS.next (<anonymous>)
+    at buildJS (/Users/rain/.nvm/versions/node/v7.10.0/lib/node_modules/labrador-cli/lib/build-js.js:258:21)
+    at buildJS.next (<anonymous>)
+    at buildJS (/Users/rain/.nvm/versions/node/v7.10.0/lib/node_modules/labrador-cli/lib/build-js.js:258:21)
+    at buildJS.next (<anonymous>)
+
+```
+启动命令： 
+```
+labrador watch
+```
